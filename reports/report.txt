@@ -1,0 +1,25 @@
+Last 7 days
+   New: {{ newly_added_7d|count }}
+   {%- for item in newly_added_7d %}
+       {{ item.title|default("[Untitled]") }}
+           {{ item.url }}
+           Wait time: {{ now - item.time_added }}
+   {%- endfor %}
+
+   Read: {{ newly_read_7d|count }}
+   {%- for item in newly_read_7d %}
+       {{ item.title|default("[Untitled]") }}
+           {{ item.url }}
+           Wait time: {{ item.time_read - item.time_added }}
+   {%- endfor %}
+
+Total articles: {{ total }}
+Total read articles: {{ total_read }}
+Total unread articles: {{ total_unread }}
+Percentage read: {{ "%.f%%"|format(total_read/total * 100) }}
+
+Newly added in last 7 days: {{ newly_added_7d|count }}
+Read in last 7 days: {{ newly_read_7d|count }}
+
+Newly added in last 30 days: {{ newly_added_30d|count }}
+Read in last 30 days: {{ newly_read_30d|count }}
