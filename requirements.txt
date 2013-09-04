@@ -1,0 +1,4 @@
+pocket==0.2.4
+requests==1.2.3
+redis==2.8.0
+functional==0.4
